@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HW Week 3 - Psychic Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+    <!--First defining directions and what text will appear on the screen, all inside a div. We do not include "computerchoice-text" because thec computer's choice is never displayed-->
+    <div>
+        <h1 id="gameHeading">The Psychic Game</h1>
+        <p id="text-directions"><em>Guess what letter I'm thinking...</em></p>
+        <p>Wins:&nbsp;<span id="wins-text"></span></p>
+        <p>Losses:&nbsp;<span id="losses-text"></span></p>
+        <p>Guesses Remaining:&nbsp;<span id="guessRemain-text"></span></p>
+        <p>Your Guesses so Far:&nbsp;<span id="guessSoFar-text1"></span><span id="guessSoFar-text2"></span></p>
+    </div>
+
+    <script type="text/javascript">
+
+    //Create array and/or objects that list out options for game.
+    var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    
+    //Create variables that hold the number of wins, losses, and guesses remaining. This is the starting point for scoring - wins/loses start at 0, and user gets 9 guesses per "round."
+    var wins = 0;
+    var losses = 0;
+    var guessRemain = 9;
+    var guessSoFarArray = [];
+    var guessSoFar;
+
+    //Create variables that hold references to the places in HTML where we want to display things. 
+    var guessSoFarText1 = document.getElementById("guessSoFar-text1");
+    var guessSoFarText2 = document.getElementById("guessSoFar-text2");
+    var winsText = document.getElementById("wins-text");
+    var guessRemainText = document.getElementById("guessRemain-text");
+
+    //Create "for-loop" for function so that the user gets 9 chances to guess what the computer is thinking. 
+    text = "";
+    for (attempt = 0; attempt < 9; attempt++) {
+        
+        document.onkeydown = function(event) {
+            
+            //Stores user's guess and computer's choice in respective variables for comparison in if, else if, and else logic. The computer randomly chooses from given array as defined above.
+            var guessSoFar = event.key;
+            var computer = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            
+            if ((guessSoFar === "a") || (guessSoFar === "b")) {
+                console.log("This works!");
+
+                if ((guessSoFar === "a" && computer === "a")) {
+                    wins++;
+                } else {
+                    guessRemain--
+                }
+            } 
+
+        //Displays text selected by user
+        guessSoFarText1.textContent = event.key + ", ";
+        guessSoFarText2.textContent = event.key;
+        winsText.textContent = wins;
+        guessRemainText.textContent = guessRemain;
+        
+        }
+    };
+    </script>
+</body>
+</html>
