@@ -17,7 +17,7 @@
         <p>Wins:&nbsp;<span id="wins-text"></span></p>
         <p>Losses:&nbsp;<span id="losses-text"></span></p>
         <p>Guesses Remaining:&nbsp;<span id="guessRemain-text"></span></p>
-        <p>Your Guesses so Far:&nbsp;<span id="guessSoFar-text1"></span><span id="guessSoFar-text2"></span></p>
+        <p>Your Guesses so Far:&nbsp;<span id="guessSoFar-text"></span></p>
     </div>
 
     <script type="text/javascript">
@@ -29,12 +29,11 @@
     var wins = 0;
     var losses = 0;
     var guessRemain = 9;
-    var guessSoFarArray = [];
+    var guessSoFarArray = ["z"];
     var guessSoFar;
 
     //Create variables that hold references to the places in HTML where we want to display things. 
-    var guessSoFarText1 = document.getElementById("guessSoFar-text1");
-    var guessSoFarText2 = document.getElementById("guessSoFar-text2");
+    var guessSoFarText = document.getElementById("guessSoFar-text");
     var winsText = document.getElementById("wins-text");
     var guessRemainText = document.getElementById("guessRemain-text");
 
@@ -47,11 +46,11 @@
             //Stores user's guess and computer's choice in respective variables for comparison in if, else if, and else logic. The computer randomly chooses from given array as defined above.
             var guessSoFar = event.key;
             var computer = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            
-            if ((guessSoFar === "a") || (guessSoFar === "b")) {
+            guessSoFarArray.push(guessSoFar);
+            if (guessSoFar === "a") {
                 console.log("This works!");
-
-                if ((guessSoFar === "a" && computer === "a")) {
+                
+                if ((guessSoFar === computer)) {
                     wins++;
                 } else {
                     guessRemain--
@@ -59,8 +58,8 @@
             } 
 
         //Displays text selected by user
-        guessSoFarText1.textContent = event.key + ", ";
-        guessSoFarText2.textContent = event.key;
+        guessSoFarArrayText.textContent = guessSoFarArray;
+        guessSoFarText.textContent = guessSoFar + ", ";
         winsText.textContent = wins;
         guessRemainText.textContent = guessRemain;
         
