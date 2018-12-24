@@ -6,32 +6,32 @@
     <title>HW Week 3 - Psychic Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Pacifico|VT323" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <div class="center">
-            <div class="psychic-heading">
-                <h1 id="gameHeading">The Psychic Game
-                </h1>
-            </div>
-            <div class="psychic-directions">
-                <p id="text-directions"><em>Guess what letter I'm thinking...</em>
-                </p>
-            </div>
+    <div class="game-container">
         
-            <!--First defining directions and what text will appear on the screen, all inside a div. We do not include "computerchoice-text" because thec computer's choice is never displayed-->
-            <div class="game">
-                <p>Wins:&nbsp;<span id="wins-text"></span></p>
-                <p>Losses:&nbsp;<span id="losses-text"></span></p>
-                <p>Guesses Remaining:&nbsp;<span id="guessRemain-text"></span></p>
-                <p>Your Guesses so Far:&nbsp;<span id="guessSoFar-text"></span></p>
-            </div>
+        <div class="psychic-heading">
+            <h1>The Psychic Game</h1>
+            <p id="instructions">Guess what letter I'm thinking...</p>
         </div>
+
+        <div class="game-score">
+            <p>Wins:&nbsp;<span id="wins-text"></span></p>
+            <p>Losses:&nbsp;<span id="losses-text"></span></p>
+            <p>Guesses Remaining:&nbsp;<span id="guessRemain-text"></span></p>
+            <p>Your Guesses so Far:&nbsp;<span id="guessSoFar-text"></span></p>
+        </div>
+
+        <div class="glass-ball">
+            <img src="https://images.pexels.com/photos/414860/pexels-photo-414860.jpeg?cs=srgb&dl=art-ball-shaped-circle-414860.jpg&fm=jpg" alt="electric globe">
+        </div>
+    
     </div>
 
     <script src="assets/javascript/game.js" type="text/javascript"></script>
-    
+
 </body>
 </html>

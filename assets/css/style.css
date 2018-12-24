@@ -3,29 +3,38 @@
 }
 
 body {
-    margin: 0 auto;
-    background-image: url(../images/pexels-photo-831889.jpeg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
+    background-color: black;
+    color: white;
 }
 
-.center-heading {
-
-}
-
-.center {
+.psychic-heading {
     text-align: center;
 }
 
-.game {
-    background-repeat: no-repeat;
-    background-position: center; 
-    color: red;
-    opacity: 0.6;
-    width: 20em;
-    margin: 49px auto;
-    padding: 20px;
+.game-score {
+    text-align: center;
 }
 
-@media screen and (max-height )
+img {
+    height: 300px;
+}
+
+.glass-ball {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Inconsolata', monospace;
+}
+
+p, #instructions {
+    font-family: 'VT323', monospace;
+}
+
+#instructions {
+    font-size: 2em;
+}
+
+p {
+    font-size: 20px;
+}

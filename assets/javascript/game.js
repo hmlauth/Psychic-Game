@@ -38,7 +38,7 @@ console.log("Computer guess: ", computer);
                 computer = computerChoices[Math.floor(Math.random() * computerChoices.length)];
                 console.log("Next Computer guess: ",computer);
                 //Else, if user's guess is NOT the same as computer's, and  if the remaining guesses are greater than 0, decrease remaining guesses by 1.
-                } else if ((guessSoFar !== computer) && (guessRemain > 0)) {    
+                } else if ((guessSoFar !== computer) && (guessRemain > 1)) {    
                     guessRemain--;
                     //Else, increase losses by 1, set remaining guesses back to 9, and make "Guesses So Far" blank again.
                     } else {
