@@ -1,2 +1,2 @@
 # Psychic-Game
-JavaScript to jQuery i.e. coding just got way more fun and dynamic! Test your psychic abilities guessing which letter the computer is thinking while also dynamically updating the HTML page with the jQuery library.
+JavaScript, then more JavaScript! Test your psychic abilities while dynamically updating HTML and CSS powered by JavaScript code. 
